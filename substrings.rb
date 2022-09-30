@@ -1,7 +1,7 @@
 def substrings(word, valid_s)
     result = Hash.new(0)
     valid_s.each do |string|
-    result[string] = word.downcase.scan(string.downcase).size
+        result[string] = word.downcase.scan(string.downcase).size
     end
     return result
 end
