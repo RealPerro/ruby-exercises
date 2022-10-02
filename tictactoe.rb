@@ -29,6 +29,14 @@ class TictactoeGame
     end
   end
 
+  def check_tie
+    if @board.count("o") + @board.count("x") == 9
+      return true
+    else
+      return false
+    end
+  end
+
   def check_win
     #rows
     c1 = @board[0] == @board[1] && @board[1] == @board[2]
@@ -45,7 +53,6 @@ class TictactoeGame
     conditions = [c1,c2,c3,c4,c5,c6,c7,c8]
 
     if conditions.any?
-      puts "we have a winner"
       return true
     end   
     return false
@@ -67,12 +74,14 @@ while status == false
   if play.between?(0,8)
     if game.play(turn, play)
       game.display_board
-      status = game.check_win
-      game.winner = turn if status
+      status = game.check_win || game.check_tie
+      game.winner = turn if game.check_win
       turn = turn == 1 ? 2:1
     end
   else puts "not a valid move"
   end
+  
 end
 
+puts "Game ended"
 puts "winner is #{game.winner}"
