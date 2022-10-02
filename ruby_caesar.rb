@@ -1,5 +1,5 @@
 def caesar_cipher(string, shift_number)
-  return string if shift_number == 0
+  return string if shift_number.zero?
 
   shift_number = shift_number % 26
 
