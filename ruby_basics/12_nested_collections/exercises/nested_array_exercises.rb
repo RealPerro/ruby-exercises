@@ -11,7 +11,7 @@ def blank_seating_chart(number_of_rows, seats_per_row)
 
   # NOTE: if one of the nested arrays is changed, the others should **not**
   # change with it
-  new_array = Array.new(number_of_rows) {Array.new(seats_per_row, nil)}
+  new_array = Array.new(number_of_rows) { Array.new(seats_per_row, nil) }
 end
 
 def add_seat_to_row(chart, row_index, seat_to_add)
@@ -45,8 +45,8 @@ end
 
 def count_empty_seats(chart)
   # take a chart and return the number of empty (nil) seats in it
-  new_chart = chart.flatten.reduce(0) {|acc, seat| acc + (seat == nil ? 1:0)}
-  new_chart
+  chart.flatten.reduce(0) { |acc, seat| acc + (seat.nil? ? 1 : 0) }
+
   # NOTE: `chart` should **not** be mutated
 end
 
@@ -61,7 +61,7 @@ def find_favorite(array_of_hash_objects)
   #   { name: 'JavaScript', is_my_favorite?: false },
   #   { name: 'HTML', is_my_favorite?: false }
   # ]
-  new_hash = array_of_hash_objects.select {|value| value[:is_my_favorite?] == true}
+  new_hash = array_of_hash_objects.select { |value| value[:is_my_favorite?] == true }
   new_hash[0]
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key

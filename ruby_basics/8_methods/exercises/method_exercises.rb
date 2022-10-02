@@ -8,9 +8,8 @@
 # hint: use Integer#chr
 
 def ascii_translator(number)
-  return number.chr
+  number.chr
 end
-
 
 # method name: #common_sports
 # parameters: current_sports and favorite_sports (both arrays)
@@ -19,7 +18,6 @@ end
 def common_sports(current_sports, favorite_sports)
   current_sports & favorite_sports
 end
-
 
 # method name: #alphabetical_list
 # parameter: games (an array)
@@ -32,10 +30,9 @@ end
 # method name: #lucky_number
 # parameter: number (an integer) with default value of 7
 # return value: a string "Today's lucky number is <number>"
-def lucky_number(number=7)
-  return "Today's lucky number is #{number}"
+def lucky_number(number = 7)
+  "Today's lucky number is #{number}"
 end
-
 
 # method name: #ascii_code
 # parameter: character (a string)
@@ -43,9 +40,8 @@ end
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
 def ascii_code(character)
-  (character.length != 1) ? 'Input Error': character.ord
+  character.length != 1 ? 'Input Error' : character.ord
 end
-
 
 # method name: #pet_pun
 # parameter: animal (a string)
@@ -55,17 +51,15 @@ end
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
 def pet_pun(animal)
-  if animal == 'cat'
-    message = 'Cats are purr-fect!'
-  elsif animal == 'dog'
-    message = 'Dogs are paw-some!'
-  else
-    message = "I think #{animal}s have pet-tential!"
-  end
+  message = if animal == 'cat'
+              'Cats are purr-fect!'
+            elsif animal == 'dog'
+              'Dogs are paw-some!'
+            else
+              "I think #{animal}s have pet-tential!"
+            end
   puts message
 end
-
-
 
 # method name: #twenty_first_century?
 # parameter: year (an integer)
@@ -74,4 +68,3 @@ end
 def twenty_first_century?(year)
   year.between?(2001, 2100)
 end
-

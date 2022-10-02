@@ -1,21 +1,21 @@
 def nil_array(number)
   # return an array containing `nil` the given number of times
-  return Array.new(number)
+  Array.new(number)
 end
 
 def first_element(array)
   # return the first element of the array
-  return array.first
+  array.first
 end
 
 def third_element(array)
   # return the third element of the array
-  return array[2]
+  array[2]
 end
 
 def last_three_elements(array)
   # return the last 3 elements of the array
-  return array.last(3)
+  array.last(3)
 end
 
 def add_element(array)
@@ -45,7 +45,7 @@ end
 
 def array_difference(original, comparison)
   # return an array of elements from the original array that are not in the comparison array
-  return original - comparison
+  original - comparison
 end
 
 def empty_array?(array)
